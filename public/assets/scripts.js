@@ -12,30 +12,30 @@ $(document).ready(function () {
     });
 
     // BasicLightbox example
-    $('img').click(function () {
+    $('img').on('click', function () {
+        const imageSrc = $(this).attr('src');
         const instance = basicLightbox.create(`
-            <img src="${$(this).attr('src')}" width="800" height="600">
+            <img src="${imageSrc}" width="800" height="600" alt="Image preview">
         `);
         instance.show();
     });
 
     // Navbar burger toggle
-    $('.navbar-burger').click(function () {
+    $('.navbar-burger').on('click', function () {
         $(this).toggleClass('is-active');
         $('#navbarBasicExample').toggleClass('is-active');
     });
 });
 
+// Example function to handle image size updates (assuming it's used)
 function updateSizeInformation() {
-    var imageLeftX = $find("<%= txtXImageLeft.ClientID %>");
-    var imageLeftY = $find("<%= txtYImageLeft.ClientID %>");
-    var imageRightX = $find("<%= txtXImageRight.ClientID %>");
-    var imageRightY = $find("<%= txtYImageRight.ClientID %>");
-    var imageLeft = document.getElementById("imageLeft");
-    var imageRight = document.getElementById("imageRight");
+    const imageLeft = document.getElementById("imageLeft");
+    const imageRight = document.getElementById("imageRight");
 
-    imageLeftX.set_value(imageLeft.naturalWidth);
-    imageLeftY.set_value(imageLeft.naturalHeight);
-    imageRightX.set_value(imageRight.naturalWidth);
-    imageRightY.set_value(imageRight.naturalHeight);
+    if (imageLeft && imageRight) {
+        document.getElementById("txtXImageLeft").value = imageLeft.naturalWidth;
+        document.getElementById("txtYImageLeft").value = imageLeft.naturalHeight;
+        document.getElementById("txtXImageRight").value = imageRight.naturalWidth;
+        document.getElementById("txtYImageRight").value = imageRight.naturalHeight;
+    }
 }
