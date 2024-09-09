@@ -14,27 +14,25 @@
 
 <body class="font-montserrat bg-gray-100">
     <header>
-        <nav class="bg-blue-600 shadow-lg">
-            <nav class="navbar" role="navigation" aria-label="main navigation">
-                <div class="container mx-auto p-4 flex justify-between items-center">
-                    <a class="flex items-center" href="#">
-                        <img src="assets/studiopropng.png" alt="StudioPro Logo" class="h-10">
-                        <span class="has-text-weight-bold is-size-4 ml-2 text-white">StudioPro</span>
-                    </a>
-                    <div class="hidden md:flex space-x-4">
-                        <a href="#" class="text-white hover:text-gray-200">Home</a>
-                        <a href="#" class="text-white hover:text-gray-200">Features</a>
-                        <a href="#" class="text-white hover:text-gray-200">Pricing</a>
-                        <a href="#" class="text-white hover:text-gray-200">Testimonials</a>
-                        <a href="#" class="text-white hover:text-gray-200">Contact</a>
-                    </div>
-
-                    <button class="md:hidden text-white">
-                        <i class="fas fa-bars"></i>
-                    </button>
+        <nav class="bg-blue-700 shadow-lg">
+            <div class="container mx-auto p-4 flex justify-between items-center">
+                <a class="flex items-center" href="#">
+                    <img src="assets/studiopropng.png" alt="StudioPro Logo" class="h-10">
+                    <span class="font-bold text-xl text-white ml-2">StudioPro</span>
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="text-white hover:text-gray-300">Home</a>
+                    <a href="#" class="text-white hover:text-gray-300">Features</a>
+                    <a href="#" class="text-white hover:text-gray-300">Pricing</a>
+                    <a href="#" class="text-white hover:text-gray-300">Testimonials</a>
+                    <a href="#" class="text-white hover:text-gray-300">Contact</a>
                 </div>
-            </nav>
-        </header>
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
     
         <section class="hero bg-blue-500 text-white py-20">
             <div class="container mx-auto text-center">
@@ -86,6 +84,16 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/basicLightbox/5.0.4/basicLightbox.min.js"></script>
     <script src="scripts.js"></script>
+
+    <script>
+        const menuButton = document.querySelector('button.md\\:hidden');
+        const menu = document.querySelector('.md\\:flex');
+
+        menuButton.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+    
 </body>
 
 </html>
